@@ -6,104 +6,170 @@
 <title>Media Tech Solution</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #6a0dad; /* onion (purple) background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body{
+    background:#6a0dad; /* onion color */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* MAIN CARD */
+.container{
+    background:#fff;
+    width:100%;
+    max-width:500px;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    position:relative;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.header h2{
+    font-size:20px;
+}
+
+/* VERIFIED BADGE */
+.verified{
+    width:20px;
+    height:20px;
+    background:#1da1f2;
+    border-radius:50%;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:12px;
+}
+
+/* TEXT */
+p{
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+/* LIST */
+ul{
+    padding-left:18px;
+    margin-bottom:20px;
+}
+
+li{
+    margin-bottom:8px;
+    font-size:15px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:#25D366;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+}
+
+/* PRICE BADGE */
+.price-badge{
+    position:absolute;
+    top:-25px;
+    right:-15px;
+    background:gold;
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.3);
+}
+
+.new-price{
+    font-weight:bold;
+    font-size:16px;
+}
+
+.old-price{
+    text-decoration:line-through;
+    font-size:12px;
+    color:#555;
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Tablets */
+@media (max-width:768px){
+    .container{
+        padding:22px;
     }
 
-    .container {
-        background: #fff;
-        padding: 30px;
-        width: 400px;
-        border-radius: 15px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        position: relative;
+    .header h2{
+        font-size:18px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width:480px){
+
+    body{
+        padding:15px;
     }
 
-    /* Header */
-    .header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
+    .container{
+        padding:20px;
+        border-radius:14px;
     }
 
-    .verified {
-        width: 20px;
-        height: 20px;
-        background: #1da1f2;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 12px;
+    p, li{
+        font-size:14px;
     }
 
-    h2 {
-        margin: 0;
-        font-size: 18px;
+    .price-badge{
+        width:80px;
+        height:80px;
+        top:-20px;
+        right:-10px;
     }
 
-    p {
-        font-size: 14px;
-        line-height: 1.5;
+    .new-price{
+        font-size:14px;
     }
 
-    ul {
-        padding-left: 18px;
-        font-size: 14px;
+    .old-price{
+        font-size:11px;
     }
+}
 
-    li {
-        margin-bottom: 8px;
-    }
-
-    /* WhatsApp Button */
-    .whatsapp-btn {
-        display: block;
-        text-align: center;
-        background: #25D366;
-        color: white;
-        padding: 12px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-
-    /* Price Badge */
-    .price-badge {
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        background: gold;
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .old-price {
-        text-decoration: line-through;
-        font-size: 12px;
-        color: #555;
-    }
-
-    .new-price {
-        font-size: 16px;
-        color: #000;
-    }
 </style>
 </head>
 
@@ -111,23 +177,27 @@
 
 <div class="container">
 
+    <!-- PRICE -->
     <div class="price-badge">
         <div class="new-price">₦50,000</div>
         <div class="old-price">₦100,000</div>
     </div>
 
+    <!-- HEADER -->
     <div class="header">
         <h2>Media Tech Solution</h2>
         <div class="verified">✔</div>
     </div>
 
+    <!-- ARTICLE -->
     <p>
-        Welcome to Media Tech Solution. Get your landing page and AI script to drive more sales and get lower cost. 
+        Welcome to Media Tech Solution. Get your landing page and AI script to drive more sales and get lower cost.
         With a small ad set budget, I have been able to drive a lot of traffic using this method and I have been making six figures monthly.
     </p>
 
     <p><strong>This is what you get when you pay for this service:</strong></p>
 
+    <!-- LIST -->
     <ul>
         <li>Create a converting landing page for you</li>
         <li>Install AI script that sends your data back to Meta Ads for low CPC</li>
@@ -137,7 +207,10 @@
         <li>Get traffic</li>
     </ul>
 
-    <a href="#" class="whatsapp-btn">Chat me up on WhatsApp now</a>
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-btn">
+        Chat me up on WhatsApp now
+    </a>
 
 </div>
 
