@@ -1,204 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Media Tech Solution</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Tech Solution</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #FFF9F2; /* Onion Background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
 
-<style>
+        .container {
+            background-color: #ffffff; /* White Div */
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
 
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
 
-/* BODY */
-body{
-    background:#6a0dad; /* onion color */
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
+        .brand-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #333;
+        }
 
-/* MAIN CARD */
-.container{
-    background:#fff;
-    width:100%;
-    max-width:500px;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    position:relative;
-}
+        .verified-badge {
+            color: #1DA1F2;
+            font-size: 1.2rem;
+        }
 
-/* HEADER */
-.header{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    margin-bottom:15px;
-}
+        h1 {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
 
-.header h2{
-    font-size:20px;
-}
+        .intro-text {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
 
-/* VERIFIED BADGE */
-.verified{
-    width:20px;
-    height:20px;
-    background:#1da1f2;
-    border-radius:50%;
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:12px;
-}
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
 
-/* TEXT */
-p{
-    font-size:15px;
-    line-height:1.6;
-    margin-bottom:15px;
-}
+        .benefits-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
 
-/* LIST */
-ul{
-    padding-left:18px;
-    margin-bottom:20px;
-}
+        .benefits-list li::before {
+            content: "✓";
+            color: #25D366;
+            font-weight: bold;
+            margin-right: 10px;
+        }
 
-li{
-    margin-bottom:8px;
-    font-size:15px;
-}
+        .price-badge {
+            background: #f8f9fa;
+            border: 2px dashed #1DA1F2;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px;
+            text-align: center;
+        }
 
-/* WHATSAPP BUTTON */
-.whatsapp-btn{
-    display:block;
-    width:100%;
-    text-align:center;
-    background:#25D366;
-    color:white;
-    padding:14px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:16px;
-    transition:0.3s;
-}
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.8rem;
+        }
 
-.whatsapp-btn:hover{
-    background:#1ebe5d;
-}
+        .new-price {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+        }
 
-/* PRICE BADGE */
-.price-badge{
-    position:absolute;
-    top:-25px;
-    right:-15px;
-    background:gold;
-    width:95px;
-    height:95px;
-    border-radius:50%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 6px 18px rgba(0,0,0,0.3);
-}
+        .whatsapp-btn {
+            display: block;
+            background-color: #25D366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
 
-.new-price{
-    font-weight:bold;
-    font-size:16px;
-}
-
-.old-price{
-    text-decoration:line-through;
-    font-size:12px;
-    color:#555;
-}
-
-/* -------- RESPONSIVE -------- */
-
-/* Tablets */
-@media (max-width:768px){
-    .container{
-        padding:22px;
-    }
-
-    .header h2{
-        font-size:18px;
-    }
-}
-
-/* Mobile phones */
-@media (max-width:480px){
-
-    body{
-        padding:15px;
-    }
-
-    .container{
-        padding:20px;
-        border-radius:14px;
-    }
-
-    p, li{
-        font-size:14px;
-    }
-
-    .price-badge{
-        width:80px;
-        height:80px;
-        top:-20px;
-        right:-10px;
-    }
-
-    .new-price{
-        font-size:14px;
-    }
-
-    .old-price{
-        font-size:11px;
-    }
-}
-
-</style>
+        .whatsapp-btn:hover {
+            transform: scale(1.02);
+            background-color: #20ba5a;
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="container">
-
-    <!-- PRICE -->
-    <div class="price-badge">
-        <div class="new-price">₦50,000</div>
-        <div class="old-price">₦100,000</div>
-    </div>
-
-    <!-- HEADER -->
     <div class="header">
-        <h2>Media Tech Solution</h2>
-        <div class="verified">✔</div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1DA1F2">
+            <path d="M22.5 12.5c0-1.58-.88-2.95-2.18-3.65.25-1.53-.13-3.08-1.12-4.08s-2.55-1.37-4.08-1.12c-.7-1.3-2.06-2.18-3.65-2.18s-2.95.88-3.65 2.18c-1.53-.25-3.08.13-4.08 1.12s-1.37 2.55-1.12 4.08c-1.3.7-2.18 2.06-2.18 3.65s.88 2.95 2.18 3.65c-.25 1.53.13 3.08 1.12 4.08s2.55 1.37 4.08 1.12c.7 1.3 2.06 2.18 3.65 2.18s2.95-.88 3.65-2.18c1.53.25 3.08-.13 4.08-1.12s1.37-2.55 1.12-4.08c1.3-.7 2.18-2.06 2.18-3.65zm-12.42 5L6.44 13.86l1.43-1.41 2.21 2.2 5.5-5.49 1.43 1.41-6.93 6.93z"/>
+        </svg>
+        <span class="brand-name">Media Tech Solution</span>
     </div>
 
-    <!-- ARTICLE -->
-    <p>
-        Welcome to Media Tech Solution. Get your landing page and AI script to drive more sales and get lower cost.
-        With a small ad set budget, I have been able to drive a lot of traffic using this method and I have been making six figures monthly.
+    <h1>Welcome to Media Tech Solution</h1>
+    
+    <p class="intro-text">
+        Get your landing page and AI script to drive more sales and get lower cost. 
+        With a small ad set budget, I have been able to drive a lot of traffic using this method 
+        and I have been making six figures monthly.
     </p>
 
     <p><strong>This is what you get when you pay for this service:</strong></p>
-
-    <!-- LIST -->
-    <ul>
+    <ul class="benefits-list">
         <li>Create a converting landing page for you</li>
         <li>Install AI script that sends your data back to Meta Ads for low CPC</li>
         <li>Get low ad spending cost</li>
@@ -207,11 +152,14 @@ li{
         <li>Get traffic</li>
     </ul>
 
-    <!-- WHATSAPP BUTTON -->
-    <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-btn">
-        Chat me up on WhatsApp now
-    </a>
+    <div class="price-badge">
+        <span class="old-price">₦100,000</span>
+        <span class="new-price">₦50,000</span>
+    </div>
 
+    <a href="https://wa.me/YOURNUMBER" class="whatsapp-btn">
+        CHAT ME UP ON WHATSAPP NOW
+    </a>
 </div>
 
 </body>
