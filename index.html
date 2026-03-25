@@ -22,7 +22,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1655360265489344&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<script src="WhatsAppIcon.js" type="module"></script>
+
     <style>    
         body {
             background-color: #FFF9F2; /* Onion Background */
@@ -139,15 +139,65 @@ src="https://www.facebook.com/tr?id=1655360265489344&ev=PageView&noscript=1"
         .whatsapp-btn:hover {
             transform: scale(1.02);
             background-color: #20ba5a;
+
+            .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+}
+
+/* Tooltip (Optional) */
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    right: 110%; /* Positions it to the left of the icon */
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.whatsapp-float:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
         }
     </style>
 </head>
 <body>
-    <whatsapp-icon 
-    position="bottom-right" 
-    phone="08088500953" 
-    title="Chat with us on WhatsApp">
-</whatsapp-icon>
+    <a href="https://wa.me/1234567890?text=I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    <span class="tooltip-text">Chat with us!</span>
+</a>
 
 <div class="container">
     <div class="header">
